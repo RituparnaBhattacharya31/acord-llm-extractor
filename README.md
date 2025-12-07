@@ -1,4 +1,10 @@
-# acord-llm-extractor
+# ACORD LLM Extractor
+
+![Python](https://img.shields.io/badge/python-3.12-blue)
+![AWS Lambda](https://img.shields.io/badge/aws-lambda-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Serverless](https://img.shields.io/badge/serverless-event--driven-lightgrey)
+
 Event-driven ACORD 140 PDF extraction pipeline using AWS Lambda, Google Gemini, S3, and DynamoDB. Automatically converts ACORD forms into clean, structured JSON using serverless architecture and LLM intelligence.
 
 Full Description
