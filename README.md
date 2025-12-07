@@ -365,10 +365,10 @@ Steps: 1. Lambda → Triggers → Add Trigger\
 
 ### Steps
 
-1.  Upload ACORD140 PDF to the input bucket\
-2.  Lambda gets triggered\
-3.  Output JSON appears in the output bucket\
-4.  DynamoDB item is created\
+1.  Upload ACORD140 PDF to the input bucket
+2.  Lambda gets triggered
+3.  Output JSON appears in the output bucket
+4.  DynamoDB item is created
 5.  CloudWatch logs show execution details
 
 ------------------------------------------------------------------------
@@ -376,6 +376,6 @@ Steps: 1. Lambda → Triggers → Add Trigger\
 # ✔️ Summary
 
 This pipeline enables: - Automated ACORD PDF → JSON extraction\
-- LLM-powered parsing\
-- Serverless processing\
+- LLM-powered parsing
+- Serverless processing
 - End-to-end cloud automation
