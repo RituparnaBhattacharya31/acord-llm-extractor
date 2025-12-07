@@ -100,40 +100,43 @@ Before deploying, test everything locally.
     ├── clients/
     │   ├── base_client.py
     │   ├── gemini_client.py
-    │   ├── __init__.py
+    │   └── __init__.py
     │
     ├── extractors/
     │   ├── llm_extractor.py
-    │   ├── pdf_extractor.py          # if you kept this, else remove
-    │   ├── __init__.py
+    │   └── __init__.py
     │
     ├── models/
     │   ├── accord_schema.py
-    │   ├── __init__.py
+    │   └── __init__.py
+    │
+    ├── output/              # local output during local testing (ignored in Lambda)
+    │   └── *.json
+    │
+    ├── results/             # logs, samples for debugging (optional)
+    │   └── *.json
+    │
+    ├── tools/
+    │   ├── main.py          # entry point for local testing (NOT used in Lambda)
+    │   └── __init__.py
     │
     ├── utils/
     │   ├── pdf_processor.py
-    │   ├── logger.py
-    │   ├── __init__.py
+    │   └── __init__.py
     │
     ├── validators/
     │   ├── data_validator.py
-    │   ├── __init__.py
+    │   └── __init__.py
     │
-    ├── tools/
-    │   ├── main.py                   # used for local execution
-    │   ├── __init__.py
+    ├── venv/                # local virtual environment (ignored in Git + Lambda)
     │
-    ├── output/                       # local output from running Gemini locally
-    │   └── *.json
-    │
-    ├── results/                      # debug/run results (optional)
-    │   └── *.json
-    │
-    ├── .env
-    ├── handler.py                    # Lambda entry point
-    ├── config.py                     # central config loader
-    ├── Dockerfile                    # builds Linux-compatible dependencies
+    ├── .env                 # local environment variables (never commit to Git)
+    ├── 140-Property-Acord.pdf
+    ├── build_push.sh        # optional helper script
+    ├── config.py
+    ├── Dockerfile           # used to build Linux-compatible wheels for Lambda Layer
+    ├── handler.py           # AWS Lambda handler
+    ├── README.md
     └── requirements.txt
 
 ### Steps to run locally
