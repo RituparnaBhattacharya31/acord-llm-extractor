@@ -8,19 +8,23 @@
 Event-driven ACORD 140 PDF extraction pipeline using AWS Lambda, Google Gemini, S3, and DynamoDB. Automatically converts ACORD forms into clean, structured JSON using serverless architecture and LLM intelligence.
 Full Description
 A fully serverless and automated pipeline for extracting structured JSON data from ACORD 140 insurance PDF forms using:
-➡️AWS Lambda (Python)
-➡️Google Gemini (LLM)
-➡️Amazon S3 event triggers
-➡️Lambda Layers (for 70MB Gemini dependencies)
-➡️DynamoDB storage
+➡️ AWS Lambda (Python)
+➡️ Google Gemini (LLM)
+➡️ Amazon S3 event triggers
+➡️ Lambda Layers (for 70MB Gemini dependencies)
+➡️ DynamoDB storage
 
-This project demonstrates how to combine LLMs with AWS serverless architecture to process incoming PDF documents with zero manual effort. When a new ACORD form is uploaded to an S3 bucket, the system automatically:
+🚀 Overview
 
-➡️Downloads and processes the PDF
-➡️Extracts structured fields using Gemini
-➡️Validates the extracted data
-➡️Stores the parsed JSON in S3
-➡️Saves the full extraction record in DynamoDB
+This repository contains a complete Proof of Concept (POC) for extracting structured JSON data from ACORD 140 insurance PDF forms using:
+
+➡️ AWS Lambda (Python)
+➡️ Gemini LLM for field-level extraction
+➡️ Amazon S3 for file ingestion & output
+➡️ DynamoDB for storing extraction + validation results
+➡️ Lambda Layers for large Python dependencies
+
+The pipeline is fully automated: once a PDF arrives in S3, the Lambda extracts, validates, stores, and logs everything end-to-end.
 
 This README provides an end-to-end guide on implementing an **ACORD 140
 PDF → JSON extraction workflow** using **AWS Lambda, S3, DynamoDB, and
@@ -28,6 +32,34 @@ Gemini LLM**.\
 It consolidates all steps from local development, packaging, deployment,
 and final testing.
 
+------------------------------------------------------------------------
+
+🏗️ Architecture Diagram
+
+        ┌─────────────────────────┐
+        │ S3 Input Bucket         │
+        │ uploads/ACORD140.pdf    │
+        └────────────┬────────────┘
+                     │ (S3 Event)
+                     ▼
+        ┌───────────────────────────┐
+        │ AWS Lambda (Python)       │
+        │ - Downloads PDF           │
+        │ - Extracts using Gemini   │
+        │ - Validates fields        │
+        └───────┬───────────────────┘
+                │ JSON Output
+                ▼
+        ┌───────────────────────────┐
+        │ S3 Output Bucket          │
+        │ results/acord140.json     │
+        └───────┬───────────────────┘
+                │ Metadata + JSON
+                ▼
+        ┌───────────────────────────┐
+        │ DynamoDB Table            │
+        │ documentId / createdAt    │
+        └───────────────────────────┘
 ------------------------------------------------------------------------
 
 # 1. Creating a Lambda in Python
