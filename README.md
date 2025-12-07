@@ -49,16 +49,16 @@ and final testing.
                      S3 Event Trigger
                               |
                               v
-+-------------------------------------------------------+
-|                     AWS Lambda                        |
-|                                                       |
-| 1. Reads PDF from S3                                  |
-| 2. Extracts text using PDFProcessor                   |
-| 3. Sends extracted text to Gemini (LLMExtractor)      |
-| 4. Validates response (DataValidator)                 |
-| 5. Writes JSON to output S3 bucket                    |
-| 6. Stores record in DynamoDB                          |
-+-------------------------------------------------------+
+    +-------------------------------------------------------+
+    |                     AWS Lambda                        |
+    |                                                       |
+    | 1. Reads PDF from S3                                  |
+    | 2. Extracts text using PDFProcessor                   |
+    | 3. Sends extracted text to Gemini (LLMExtractor)      |
+    | 4. Validates response (DataValidator)                 |
+    | 5. Writes JSON to output S3 bucket                    |
+    | 6. Stores record in DynamoDB                          |
+    +-------------------------------------------------------+
                               |
                               v
                    +----------------------+
