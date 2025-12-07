@@ -253,7 +253,7 @@ Option B — Using Ubuntu (WSL 2)
 
 ### Steps
 
-1.  Install Ubuntu (WSL2)\
+1.  Install Ubuntu (WSL2)
 2.  Inside Ubuntu:
 
 ```{=html}
@@ -285,9 +285,9 @@ Move `python_libs.zip` to Windows → Upload to S3.
 
 ## 6.3 Creating Lambda Layer
 
-1.  Lambda → Layers → Create Layer\
-2.  Choose **Upload from S3**\
-3.  Runtime: **Python 3.12**\
+1.  Lambda → Layers → Create Layer
+2.  Choose **Upload from S3**
+3.  Runtime: **Python 3.12**
 4.  Architecture: **x86_64**
 
 ------------------------------------------------------------------------
@@ -320,9 +320,9 @@ Lambda → Layers → Add Layer → Custom Layer → Select version.
 
 # 8. Adding S3 Trigger
 
-Steps: 1. Lambda → Triggers → Add Trigger\
-2. Select S3 bucket\
-3. Event: **ObjectCreated:Put**\
+Steps: 1. Lambda → Triggers → Add Trigger
+2. Select S3 bucket
+3. Event: **ObjectCreated:Put**
 4. Prefix: `attachments/`
 
 ------------------------------------------------------------------------
@@ -375,7 +375,7 @@ Steps: 1. Lambda → Triggers → Add Trigger\
 
 # ✔️ Summary
 
-This pipeline enables: - Automated ACORD PDF → JSON extraction\
+This pipeline enables: - Automated ACORD PDF → JSON extraction
 - LLM-powered parsing
 - Serverless processing
 - End-to-end cloud automation
